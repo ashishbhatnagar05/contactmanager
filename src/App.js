@@ -7,8 +7,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>App component</h1>
-        <Header/>
-        <Contact/>
+        <Header branding='Contact Manager'/>
+        <Contact name='John Doe' email='johnDoe@gmail.com' phone='+918745389201'/>
+        <Contact name='Karen Smith' email='KarenSmith@gmail.com' phone='+919604534235'/>
       </div>
     );
   }
