@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './contact.css'
 
 
 class Contact extends Component {
@@ -7,7 +8,7 @@ class Contact extends Component {
         const {name,email,phone}=this.props;
         return (
             <div>
-                <h1>{name}</h1>
+                <h4>{name}</h4>
                 <ul>
                     <li>{email}</li>
                     <li>{phone}</li>
