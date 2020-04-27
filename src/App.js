@@ -4,19 +4,27 @@ import Header from "./components/layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "./context";
 import AddContact from "./components/contacts/AddContact";
+import About from "./components/pages/About";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NotFound from "./components/pages/NotFound";
 
 class App extends React.Component {
   render() {
     return (
       <Provider>
-        <div className="App">
-          <h1>App component</h1>
-          <Header branding="Contact Manager" />
-          <div className="container">
-           <AddContact/>
-           <Contacts />
+        <Router>
+          <div className="App">
+            <Header branding="Contact Manager" />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Contacts} />
+                <Route exact path="/contact/add" component={AddContact} />
+                <Route exact path="/about" component={About} />
+                <Route component={NotFound}/>
+              </Switch>
+            </div>
           </div>
-        </div>
+        </Router>
       </Provider>
     );
   }
